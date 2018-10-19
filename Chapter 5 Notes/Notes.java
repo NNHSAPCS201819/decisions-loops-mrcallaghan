@@ -1,4 +1,4 @@
-
+import java.util.Scanner;
 /**
  * Write a description of class Notes here.
  * 
@@ -56,10 +56,126 @@ public class Notes
         
         /*
          * if-else if-else statement in Java
-         *  In Java, "else if" is used instead of "elif" like Python
+         *   In Java, "else if" is used instead of "elif" like Python
          */
+        if( dieRoll == 1 )
+        {
+            System.out.println( "rolled a 1" );
+        }
+        else if( dieRoll == 2 )
+        {
+            System.out.println( "rolled a 2" );
+        }
+        else if( dieRoll == 3 )
+        {
+            System.out.println( "rolled a 3" );
+        }
+        else
+        {
+            System.out.println( "rolled a 4" );
+        }
         
+       
         
         
     }
+    
+    public static boolean doublesAreEqual( double num1, double num2 )
+        {
+            /*
+             * If we are using teh (==) equality operator for dobles, it will return true
+             *      if the binary digits match.
+             * For "equal" numbers this is probably not the case due to floating point rounding
+             *      and, therefor, not what we want.
+             * We will check if they are "close enough" (i.e., epsilon value)
+             */
+            
+            final double EPSILON = 1e-14;  // 1 x 10 ^ -14
+            
+            if ( Math.abs( num1 - num2 ) < EPSILON )
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+            
+            // don't have to use an if statement when working with a boolean
+            // return ( Math.abs( num1 - num2 ) < EPSILON );
+            
+            
+        }
+        
+    public static void stringExample()
+    {
+        Scanner s = new Scanner( System.in );
+        System.out.println( "Enter two strings: ");
+        String str1 = s.next();
+        String str2 = s.next();
+        
+        /*
+         * The equality operator (==) returns true if teh two values contain the same value.
+         *   For objects, including Strings, this means they contain the same refernece.  That is,
+         *   they contain the same object in the computer's memory, not that they have teh same 
+         *   sequence of characters.
+         */
+        
+        if( str1 == str2 )
+        {
+            System.out.println("strings references are equal.");
+        }
+        else
+        {
+            System.out.println("strings references are not equal.");
+        }
+        
+        /*
+         * The equals method will return true if the two objects are "equal".
+         *      What equal means is defined by the class.  For strings, it means that the two objects 
+         *      have the same sequence of characters.
+         */
+        
+        if( str1.equals( str2 ))
+        {
+            System.out.println("strings are equal.");
+        }
+        else
+        {
+            System.out.println("strings are not equal.");
+        }
+        
+        /*
+         * We will determine which string comes first lexographically using the compareTo method
+         *      of teh String class.
+         *      
+         * compareTo returns an int:
+         *   0:  if the strings are equal (same sequence of characters)
+         *   <0: if str1 < str2 lexographically
+         *   >0: if str1 > str2 lexographically
+         */
+        
+        int result = str1.compareTo(str2);
+        String firstStr = null;  //no object referenced
+        
+        if (result < 0)
+        {
+            firstStr = str1;
+        }
+        else if (result > 0)
+        {
+            firstStr = str2;
+        }
+        
+        if( firstStr != null )
+        {
+               System.out.println( "The first String is: " + firstStr );
+        
+               System.out.println( "It's length is: " + firstStr.length());
+        }
+        else
+        {
+            System.out.println("Strings are equal.");
+        }
+}
 }
