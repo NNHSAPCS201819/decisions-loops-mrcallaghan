@@ -208,6 +208,105 @@ public class Notes
         
     }
     
+    public static String getStudentClass( int gradeNumber )
+    {
+        /*
+         * Switch statement
+         *   anther conditional statement (like if statement)
+         *   preferred when evaluating *discrete* values
+         *   can be used for byte, short, cahr, in primitive types
+         *   can also be used for enumerations and String objects
+         * the condition is evaluated, flow of execution jumps to whichever case matches
+         */
+        String studentClass = "";
+        
+        switch ( gradeNumber )
+        {
+            case 9:
+            {
+                studentClass = "freshman";
+                /*
+                 * break causes the flow of execution to leave the switch
+                 * 
+                 *   (without a break, the flow of execution continues into the next case.)
+                 */
+                break;
+            }
+            case 10:
+            {
+                studentClass = "sophomore";
+                break;
+            }
+            case 11:
+            {
+                studentClass = "junior";
+                break;
+            }
+            case 12:
+            {
+                studentClass = "senior";
+                break;
+            }
+            /*
+             * by leaving out the break, multiple cases can rund the same code.
+             */
+            case 6:
+            case 7:
+            case 8:
+            {
+                studentClass = "junior high";
+                break;
+            }
+            
+            /*
+             * default matches everything not mathced by one of the cases
+             */
+            default:
+            {
+                studentClass = "elementary";
+                break;
+            }
+        }
+        return studentClass;
+    }
+    
+    public static void assignmentOperatorExample()
+    {
+        /*
+         * augmented assignment operators:  +=, -=, *=, /=, %=
+         *  same as in Pyhton
+         *  perform the specified operation and teh assign the resulting value to a variable
+         */
+        int x = 7;
+        int y = 7;
+        int z = 7;
+        
+        x = x + 1;
+        y += 1;
+        z++;  //most common in Java
+        
+        System.out.println( "x = " + x + "; y = " + y + "; z = " + z);
+        
+        /*
+         * post increment/decrement operator
+         *      equivalent to adding/subtracting 1
+         *      returns teh value before performing the increment/decrement
+         */
+        
+        int a = 7;
+        int b = a++;
+        System.out.println("a = " + a + "; b = " + b);  // a = 8; b = 7
+        
+        /*
+         * pre increemnt / decrement operator
+         *      returns the value after perfomring the increment/decrement
+         */
+        int c = 7;
+        int d = ++c;
+        System.out.println("c = " + c + "; d = " + d);
+        
+        
+    }
     
     
     
