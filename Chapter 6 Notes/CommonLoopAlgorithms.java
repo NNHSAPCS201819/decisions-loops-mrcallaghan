@@ -36,7 +36,7 @@ public class CommonLoopAlgorithms
       {
           amount++;
       }
-      return total / amount;       // returns the calculated average
+      return total / (double) amount;       // returns the calculated average
 
   }
 
@@ -67,7 +67,7 @@ public class CommonLoopAlgorithms
               count++;
           }
         }
-      while(s.hasNextInt() == true);
+      while(true);
 
       return count;
   }
@@ -91,11 +91,18 @@ public class CommonLoopAlgorithms
            text = s.next(); //takes the next word
            words++; //increment total number of words
        }
-       while (text.length() < 5); //condition
+       while (text.length() <= 5); //condition
        
        return words;
    }
-
+   
+   /*
+    * Loop Algorithm #4: Prompting until a match is found
+    * prompts the user to enter a positive integer less than 100
+    * reads the number
+    * continues to prompt the user until the number matches the criteria
+    * @return teh number that matched the criteria
+    */
    public static int promptUntilMatch()
    {
        Scanner s = new Scanner(System.in);
@@ -105,14 +112,11 @@ public class CommonLoopAlgorithms
         System.out.println("Please enter an integer");
         value = s.nextInt();
         
-        if (value > 0 && value < 100)
-        {
-            break; 
-        }
-        else
+        if (value < 0 || value > 100)
         {
             System.out.println("Integer does not meet criteria: try again");
         }
+        
         
        }
     
@@ -154,8 +158,23 @@ public class CommonLoopAlgorithms
         while(s.hasNextInt() == true);
         return max;
    }
+   
+   public static int findMax2() 
+    {
+        Scanner s = new Scanner(System.in);
+        int max = s.nextInt();
 
-
+        while(s.hasNextInt() == true)
+        {
+            int currentValue = s.nextInt();
+            if(max < currentValue)
+            {
+                max = currentValue;
+            }
+        }
+        return max;
+    }
+   
    /*
     * Loop Algorithm #5.2: findMin
     * reads a series of numbers (ends with a letter)
@@ -190,23 +209,26 @@ public class CommonLoopAlgorithms
     */
 
    public static int compareAdjacent()
-   {
-       Scanner in = new Scanner(System.in);
-       System.out.print("Enter the series of numbers with a letter at the end: ");
-       String series = in.next().toLowerCase();
-       
-       int i = 0;
-       while (i < series.length()-1)
-       {
-           String number1 = series.substring(i,i+1);
-           String number2 = series.substring(i+1,i+2);
-           
-           if (number1.equals(number2))
-           {
-               return Integer.valueOf(series.substring(i,i+1)); //https://www.mkyong.com/java/java-convert-sting-to-int/
-           }
-       }
-       
-       return -1;
-   }
+    {
+        Scanner s = new Scanner (System.in);
+        System.out.print("Enter a series of integers (letter to quit): ");
+        // assume the user enters at least two integers
+        int currentValue = s.nextInt();
+        int previousValue = s.nextInt();
+        do
+        {
+            if (s.hasNextInt() == false)
+            {
+                currentValue = 0;
+                break;
+            }
+
+            previousValue = currentValue;
+            currentValue = s.nextInt();
+        }
+        while(previousValue != currentValue);
+
+        return currentValue;
+    }
+   
 }
