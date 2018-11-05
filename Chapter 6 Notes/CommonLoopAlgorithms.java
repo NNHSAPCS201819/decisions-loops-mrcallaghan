@@ -26,7 +26,7 @@ public class CommonLoopAlgorithms
           {
               break;       // leave the loop
           }
-          //value = s.nextInt();     // number that is entered
+          value = s.nextInt();     // number that is entered
           total += value;          // sum of numbers
           amount++;                // adding 1 everytime a number is entered
       }
@@ -100,21 +100,22 @@ public class CommonLoopAlgorithms
    {
        Scanner s = new Scanner(System.in);
        int value = -1;
-    while (value < 0 || value > 100)
-    {
-      System.out.println("Please enter an integer");
-      value = s.nextInt();
-      
-      if (value > 0 && value < 100)
+       while (value < 0 || value > 100)
+       {
+        System.out.println("Please enter an integer");
+        value = s.nextInt();
+        
+        if (value > 0 && value < 100)
         {
-          break; 
+            break; 
         }
-      else
+        else
         {
-          System.out.println("Integer does not meet criteria: try again");
+            System.out.println("Integer does not meet criteria: try again");
         }
         
-    }
+       }
+    
        return value;
    }
 
@@ -186,8 +187,26 @@ public class CommonLoopAlgorithms
     * reads a series of numbers (ends with a letter)
     * if an adjacent duplicate number is entered, the loop is exited
     * @return the adjacent duplicate number that was entered
-    
+    */
+
    public static int compareAdjacent()
    {
-   }*/
+       Scanner in = new Scanner(System.in);
+       System.out.print("Enter the series of numbers with a letter at the end: ");
+       String series = in.next().toLowerCase();
+       
+       int i = 0;
+       while (i < series.length()-1)
+       {
+           String number1 = series.substring(i,i+1);
+           String number2 = series.substring(i+1,i+2);
+           
+           if (number1.equals(number2))
+           {
+               return Integer.valueOf(series.substring(i,i+1)); //https://www.mkyong.com/java/java-convert-sting-to-int/
+           }
+       }
+       
+       return -1;
+   }
 }

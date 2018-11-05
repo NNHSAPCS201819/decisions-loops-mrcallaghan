@@ -1,19 +1,19 @@
 #BlueJ package file
 objectbench.height=102
 objectbench.width=1318
-package.editor.height=498
+package.editor.height=546
 package.editor.width=1248
-package.editor.x=-69
-package.editor.y=31
+package.editor.x=-8
+package.editor.y=-8
 package.numDependencies=0
 package.numTargets=3
 package.showExtends=true
 package.showUses=true
 project.charset=UTF-8
-target1.editor.height=680
-target1.editor.width=900
-target1.editor.x=90
-target1.editor.y=70
+target1.editor.height=744
+target1.editor.width=1382
+target1.editor.x=-8
+target1.editor.y=-8
 target1.height=50
 target1.name=CommonLoopAlgorithms
 target1.naviview.expanded=true
