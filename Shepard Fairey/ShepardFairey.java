@@ -9,7 +9,8 @@ import java.awt.Color;
 public class ShepardFairey
 {
     private ColorManipulator manipulator;
-
+    private Picture image;
+    // SF Colors - these do not have to stay in this class; you can change the colors if needed
     private static final Color OFF_WHITE = new Color( 248, 229, 175 );
     private static final Color LIGHT_BLUE = new Color( 121, 149, 159 );
     private static final Color RED = new Color( 198, 50, 45 );
@@ -18,6 +19,7 @@ public class ShepardFairey
     public ShepardFairey( Picture newPicture )
     {
         this.manipulator = new ColorManipulator( newPicture );
+        this.image = newPicture;
     }
 
     /**
