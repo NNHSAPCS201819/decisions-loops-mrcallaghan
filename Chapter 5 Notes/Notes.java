@@ -214,9 +214,9 @@ public class Notes
          * Switch statement
          *   anther conditional statement (like if statement)
          *   preferred when evaluating *discrete* values
-         *   can be used for byte, short, cahr, in primitive types
+         *   can be used for byte, short, and char primitive types
          *   can also be used for enumerations and String objects
-         * the condition is evaluated, flow of execution jumps to whichever case matches
+         * the condition is evaluated and flow of execution jumps to whichever case matches
          */
         String studentClass = "";
         
@@ -248,7 +248,7 @@ public class Notes
                 break;
             }
             /*
-             * by leaving out the break, multiple cases can rund the same code.
+             * by leaving out the break, multiple cases can run the same code.
              */
             case 6:
             case 7:
@@ -259,7 +259,7 @@ public class Notes
             }
             
             /*
-             * default matches everything not mathced by one of the cases
+             * default matches everything not matched by one of the cases
              */
             default:
             {
@@ -275,7 +275,7 @@ public class Notes
         /*
          * augmented assignment operators:  +=, -=, *=, /=, %=
          *  same as in Pyhton
-         *  perform the specified operation and teh assign the resulting value to a variable
+         *  perform the specified operation and then assign the resulting value to a variable
          */
         int x = 7;
         int y = 7;
@@ -290,7 +290,7 @@ public class Notes
         /*
          * post increment/decrement operator
          *      equivalent to adding/subtracting 1
-         *      returns teh value before performing the increment/decrement
+         *      returns the value before performing the increment/decrement
          */
         
         int a = 7;
@@ -298,8 +298,8 @@ public class Notes
         System.out.println("a = " + a + "; b = " + b);  // a = 8; b = 7
         
         /*
-         * pre increemnt / decrement operator
-         *      returns the value after perfomring the increment/decrement
+         * pre increment / decrement operator
+         *      returns the value after performing the increment/decrement
          */
         int c = 7;
         int d = ++c;
